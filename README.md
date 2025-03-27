@@ -57,3 +57,5 @@ Blinks both eyes randomly:
 Repositions both eyes randomly:
 - **setIdleMode()** _(bool ON/OFF, int interval, int variation) -> turn on/off, set interval between each eye repositioning in full seconds, set range for additional random interval variation in full seconds_
 
+### Importan!
+**This Fork use the Adafruit GFXCanvas (Framebuffer) and the spram from an esp32 to draw on Screen. So u wont get flickering TFT Screen but also need a board with much RAM ( about 150000 bytes, 200000 bytes recommendet )**
