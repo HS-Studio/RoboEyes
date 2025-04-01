@@ -13,15 +13,13 @@ RoboEyes::~RoboEyes() { }
   void RoboEyes::begin(int width, int height, byte frameRate)
   {
     Serial.begin(115200);
-    Serial.println("[INFO] Versuche Canvas im PSRAM zu allokieren...");
+    Serial.println("[INFO] Versuche Canvas im RAM zu allokieren...");
 
-    eyeCanvas = (GFXcanvas16 *) ps_malloc(sizeof(GFXcanvas16));
-
+    eyeCanvas = (GFXcanvas16 *) malloc(sizeof(GFXcanvas16));
     if (!eyeCanvas) {
-      Serial.println("[ERROR] PSRAM-Allocation fehlgeschlagen!");
+      Serial.println("[ERROR] RAM-Allocation fehlgeschlagen!");
       while (1);
     }
-
     new (eyeCanvas) GFXcanvas16(CANV_W, CANV_H);
 
     tft.init(width, height);
